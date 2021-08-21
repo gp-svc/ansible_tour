@@ -20,5 +20,5 @@
 -   python -m venv .
 -  source bin/activate
 -  pip install <pakage name>
-- 
+-  python -m pip install ansible
 - 
