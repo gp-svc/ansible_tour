@@ -14,4 +14,11 @@
 - ln -s  /usr/local/bin/python3.9 python
 - cd /usr/local/bin/
 - cp pip3.9 pip
-    
+
+- creating virtual env
+-  mkdir ansible_py3.9 in any location from local user
+-   python -m venv .
+-  source bin/activate
+-  pip install <pakage name>
+- 
+- 
