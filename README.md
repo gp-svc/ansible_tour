@@ -1,7 +1,7 @@
 - Installing python 3.9 version 
 - download the tar ball from python org
 
-- yum install gcc openssl-devel bzip2-devel libffi-devel zlib-devel xz-devel
+-> yum install gcc openssl-devel bzip2-devel libffi-devel zlib-devel xz-devel
 - cd /usr/src
 - wget https://www.python.org/ftp/python/3.9.0/Python-3.9.0.tgz
 - tar -xvf py
