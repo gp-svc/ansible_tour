@@ -10,14 +10,23 @@
 - ./configure --enable-optimizations
 - make altinstall
  
+ 
 - cd /usr/bin/
 - ln -s  /usr/local/bin/python3.9 python
 - cd /usr/local/bin/
-- cp pip3.9 pip
+- cp pip3.9 pip 
+
+
+#### some time need to install pip separately
+  using
+- wget https://bootstrap.pypa.io/get-pip.py
+- python get-pip.py ## with ensure that python3.9 python getting execute
 
 - creating virtual env
 -  mkdir ansible_py3.9 in any location from local user
--   python -m venv .
+-  cd ansible_py3.9
+-  pip install virtualenv
+-  python -m venv .
 -  source bin/activate
 -  pip install <pakage name>
 -  python -m pip install ansible
