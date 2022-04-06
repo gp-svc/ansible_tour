@@ -1,0 +1,38 @@
+---
+- hosts: localhost
+  tasks:
+    - name: include vars for home gp dir
+      include_vars:
+        file: vars.yaml
+        name: stuff
+      register: stuff_sts
+
+    - name: include vars for tech details
+      include_vars:
+        file: devops.yaml
+        name: devops_vars
+
+
+    - name: print variables
+      debug:
+        msg: "Username: {{ stuff.username }}, Home dir: {{ stuff.home }}, tech details {{ devops_vars.tech }}  " 
+      
+    - name: Register loop output as a variable
+      ansible.builtin.shell: "echo {{ item }}"
+      loop:
+        - "one"
+        - "two"
+      register: sts
+
+    - name: debug the previous status
+      debug:
+        msg: "{{ item }}"
+      loop:
+        - "{{ sts }}"
+        - "{{ stuff_sts }}"
+
+
+    - name: Run with items greater than 5
+      ansible.builtin.command: echo {{ item }}
+      loop: [ 0, 2, 4, 6, 8, 10 ]
+      when: item < 5
